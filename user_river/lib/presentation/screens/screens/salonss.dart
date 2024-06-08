@@ -4,12 +4,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'dart:convert';
 import 'package:zemnanit/presentation/screens/common_widgets/appbar.dart';
 import 'package:zemnanit/presentation/screens/common_widgets/bottomnav.dart';
-import 'package:zemnanit/presentation/screens/home_bf_login.dart';
 import 'login_user.dart';
 import 'appointments.dart';
 import 'booking.dart';
 import 'home.dart';
-import 'home_bf_login.dart' as home;
+// import 'home_bf_login.dart' as home;
 
 void main() {
   runApp(ProviderScope(child: ZemnanitApp()));
@@ -19,6 +18,7 @@ class ZemnanitApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Salon List App',
       theme: ThemeData(
         primarySwatch: Colors.blue,

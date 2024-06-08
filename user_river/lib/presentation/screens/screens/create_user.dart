@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:zemnanit/presentation/screens/common_widgets/appbar.dart';
-import 'package:zemnanit/presentation/screens/auth_service.dart';
+import 'package:zemnanit/presentation/screens/services/auth_service.dart';
 
 class CreateUser extends StatelessWidget {
   @override

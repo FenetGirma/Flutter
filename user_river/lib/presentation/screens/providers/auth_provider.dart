@@ -1,28 +1,8 @@
+// provider.dart
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-
-class AuthState {
-  final String? message;
-  final List<dynamic>? appointments;
-  final String? error;
-  final String? email;
-  final String? fullname;
-  final String? accessToken;
-  final List<dynamic>? salons;
-  final bool loading;
-
-  AuthState({
-    this.message,
-    this.salons,
-    this.fullname,
-    this.appointments,
-    this.error,
-    this.email,
-    this.accessToken,
-    this.loading = false,
-  });
-}
+import 'package:zemnanit/presentation/screens/models/auth_state.dart';
 
 class AuthService extends StateNotifier<AuthState> {
   AuthService() : super(AuthState());

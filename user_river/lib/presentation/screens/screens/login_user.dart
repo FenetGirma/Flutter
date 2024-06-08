@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../screens/auth_service.dart';
-import '../screens/home.dart';
+import 'package:zemnanit/presentation/screens/services/auth_service.dart';
+import 'package:zemnanit/presentation/screens/models/auth_state.dart';
+import 'package:zemnanit/presentation/screens/screens/create_user.dart';
+// import '../screens/home.dart';
+import 'home.dart';
 
 void main() {
   runApp(ProviderScope(child: Login()));
@@ -148,6 +151,7 @@ class _LoginState extends ConsumerState<Log_in> {
                 ),
               ),
             ),
+           
           ],
         ),
       ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'auth_service.dart';
+import 'package:zemnanit/presentation/screens/services/auth_service.dart';
 
 class ProfilePage extends ConsumerWidget {
   final String email;

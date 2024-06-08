@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:zemnanit/presentation/screens/booking.dart';
+import 'package:zemnanit/presentation/screens/screens/booking.dart';
 import 'package:zemnanit/presentation/screens/common_widgets/bottomnav.dart';
-import 'package:zemnanit/presentation/screens/appointments.dart';
-import 'package:zemnanit/presentation/screens/home.dart';
-import 'package:zemnanit/presentation/screens/salonss.dart';
-import 'package:zemnanit/presentation/screens/login_user.dart';
-import 'package:zemnanit/presentation/screens/auth_service.dart';
-import 'package:zemnanit/presentation/screens/profile_page.dart';
-import 'package:zemnanit/presentation/screens/create_user.dart';
+import 'package:zemnanit/presentation/screens/screens/appointments.dart';
+import 'package:zemnanit/presentation/screens/screens/home.dart';
+import 'package:zemnanit/presentation/screens/screens/salonss.dart';
+import 'package:zemnanit/presentation/screens/screens/login_user.dart';
+import 'package:zemnanit/presentation/screens/services/auth_service.dart';
+import 'package:zemnanit/presentation/screens/screens/profile_page.dart';
+import 'package:zemnanit/presentation/screens/screens/create_user.dart';
 
 void main() {
   runApp(ProviderScope(child: ZemnanitApp()));
