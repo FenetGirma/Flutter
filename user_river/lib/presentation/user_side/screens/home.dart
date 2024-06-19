@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:zemnanit/presentation/screens/providers/auth_provider.dart';
-import 'package:zemnanit/presentation/screens/screens/booking.dart';
-import 'package:zemnanit/presentation/screens/common_widgets/appbar.dart';
-import 'package:zemnanit/presentation/screens/common_widgets/bottomnav.dart'; // Import the bottom navigation bar
+import 'package:zemnanit/presentation/user_side/providers/auth_provider.dart';
+import 'package:zemnanit/presentation/user_side/screens/booking.dart';
+import 'package:zemnanit/presentation/user_side/common_widgets/appbar.dart';
+import 'package:zemnanit/presentation/user_side/common_widgets/bottomnav.dart'; // Import the bottom navigation bar
 import 'appointments.dart';
 import 'salonss.dart';
 import 'login_user.dart'; // Import your Login screen
-import 'package:zemnanit/presentation/screens/services/auth_service.dart';
+import 'package:zemnanit/presentation/user_side/services/auth_service.dart';
 import 'profile_page.dart'; // Import your ProfilePage screen
 
 class Home extends ConsumerStatefulWidget {

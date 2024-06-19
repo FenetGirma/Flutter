@@ -2,15 +2,15 @@
 // screen.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:zemnanit/presentation/screens/providers/auth_provider.dart';
+import 'package:zemnanit/presentation/user_side/providers/auth_provider.dart';
 // import 'package:zemnanit/presentation/screens/models/auth_state.dart';
-import 'package:zemnanit/presentation/screens/common_widgets/appbar.dart';
-import 'package:zemnanit/presentation/screens/common_widgets/bottomnav.dart';
-import 'package:zemnanit/presentation/screens/screens/booking.dart';
-import 'package:zemnanit/presentation/screens/screens/home.dart';
-import 'package:zemnanit/presentation/screens/screens/login_user.dart';
-import 'package:zemnanit/presentation/screens/screens/salonss.dart';
-import 'package:zemnanit/presentation/screens/services/auth_service.dart';
+import 'package:zemnanit/presentation/user_side/common_widgets/appbar.dart';
+import 'package:zemnanit/presentation/user_side/common_widgets/bottomnav.dart';
+import 'package:zemnanit/presentation/user_side/screens/booking.dart';
+import 'package:zemnanit/presentation/user_side/screens/home.dart';
+import 'package:zemnanit/presentation/user_side/screens/login_user.dart';
+import 'package:zemnanit/presentation/user_side/screens/salonss.dart';
+import 'package:zemnanit/presentation/user_side/services/auth_service.dart';
 
 
 class MyAppointments extends StatelessWidget {

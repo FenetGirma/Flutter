@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:zemnanit/presentation/screens/providers/auth_provider.dart';
+import 'package:zemnanit/presentation/user_side/providers/auth_provider.dart';
 // import 'package:file_picker/file_picker.dart';
-import 'package:zemnanit/presentation/screens/screens/appointments.dart';
-import 'package:zemnanit/presentation/screens/common_widgets/bottomnav.dart';
-import 'package:zemnanit/presentation/screens/screens/home.dart';
-import 'package:zemnanit/presentation/screens/screens/login_user.dart';
-import 'package:zemnanit/presentation/screens/screens/salonss.dart';
-import 'package:zemnanit/presentation/screens/services/auth_service.dart';
+import 'package:zemnanit/presentation/user_side/screens/appointments.dart';
+import 'package:zemnanit/presentation/user_side/common_widgets/bottomnav.dart';
+import 'package:zemnanit/presentation/user_side/screens/home.dart';
+import 'package:zemnanit/presentation/user_side/screens/login_user.dart';
+import 'package:zemnanit/presentation/user_side/screens/salonss.dart';
+import 'package:zemnanit/presentation/user_side/services/auth_service.dart';
 
 class ZemnanitApp extends StatelessWidget {
   @override

@@ -1,10 +1,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:zemnanit/presentation/screens/common_widgets/appbar.dart';
-import 'package:zemnanit/presentation/screens/models/auth_state.dart';
-import 'package:zemnanit/presentation/screens/providers/auth_provider.dart';
-import 'package:zemnanit/presentation/screens/services/auth_service.dart';
+import 'package:zemnanit/presentation/user_side/common_widgets/appbar.dart';
+import 'package:zemnanit/presentation/user_side/models/auth_state.dart';
+import 'package:zemnanit/presentation/user_side/providers/auth_provider.dart';
+import 'package:zemnanit/presentation/user_side/services/auth_service.dart';
 
 class CreateUser extends StatelessWidget {
   @override
@@ -244,7 +244,7 @@ class _UserState extends ConsumerState<User> {
                         child: const Text(
                           "Create Account",
                           style: TextStyle(
-                            color: Color.fromARGB(255, 255, 255, 255),
+                            color: Color.fromARGB(255, 138, 60, 60),
                           ),
                         ),
                         onPressed: () async {
@@ -271,6 +271,15 @@ class _UserState extends ConsumerState<User> {
                 },
                 child: const Text(
                   "Already have an account? Log in here.",
+                  style: TextStyle(color: Colors.blue),
+                ),
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/login_admin');
+                },
+                child: const Text(
+                  "Log in as Admin",
                   style: TextStyle(color: Colors.blue),
                 ),
               ),

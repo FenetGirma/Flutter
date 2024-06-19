@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zemnanit/presentation/user_side/screens/profile_page.dart';
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
@@ -9,7 +10,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       backgroundColor: Colors.white,
       title: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Icon(
             Icons.cut,
@@ -19,8 +20,11 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
             'Zemnanit Beauty Salons',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
+         
+          
         ],
       ),
+       
     );
   }
 }

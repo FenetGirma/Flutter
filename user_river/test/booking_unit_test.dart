@@ -4,9 +4,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:zemnanit/presentation/screens/providers/auth_provider.dart';
-import 'package:zemnanit/presentation/screens/services/auth_service.dart';
-import 'package:zemnanit/presentation/screens/models/auth_state.dart';
+import 'package:zemnanit/presentation/user_side/providers/auth_provider.dart';
+import 'package:zemnanit/presentation/user_side/services/auth_service.dart';
+import 'package:zemnanit/presentation/user_side/models/auth_state.dart';
 import 'booking_unit_test.mocks.dart';
 
 @GenerateMocks([AuthService])

@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:zemnanit/presentation/screens/screens/salonss.dart';
+import 'package:zemnanit/presentation/user_side/screens/salonss.dart';
 
 void main() {
   group('SalonListScreen', () {

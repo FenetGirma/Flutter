@@ -1,9 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:riverpod/riverpod.dart';
-import 'package:zemnanit/presentation/screens/models/auth_state.dart';
-import 'package:zemnanit/presentation/screens/providers/auth_provider.dart';
-import 'package:zemnanit/presentation/screens/services/auth_service.dart';
+import 'package:zemnanit/presentation/user_side/models/auth_state.dart';
+import 'package:zemnanit/presentation/user_side/providers/auth_provider.dart';
+import 'package:zemnanit/presentation/user_side/services/auth_service.dart';
 import 'package:http/http.dart' as http;
 import 'user_login_unit_test.mocks.dart';
 import 'package:mockito/annotations.dart';

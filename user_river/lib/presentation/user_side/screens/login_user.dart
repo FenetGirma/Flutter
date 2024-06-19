@@ -1,10 +1,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:zemnanit/presentation/screens/providers/auth_provider.dart';
-import 'package:zemnanit/presentation/screens/services/auth_service.dart';
-import 'package:zemnanit/presentation/screens/models/auth_state.dart';
-import 'package:zemnanit/presentation/screens/screens/create_user.dart';
+import 'package:zemnanit/presentation/user_side/providers/auth_provider.dart';
+import 'package:zemnanit/presentation/user_side/services/auth_service.dart';
+import 'package:zemnanit/presentation/user_side/models/auth_state.dart';
+import 'package:zemnanit/presentation/user_side/screens/create_user.dart';
 import 'home.dart';
 
 void main() {
@@ -36,12 +36,7 @@ class _LoginState extends ConsumerState<Log_in> {
   Widget build(BuildContext context) {
     ref.listen<AuthState>(authServiceProvider, (previous, next) {
       if (next.accessToken != null) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-                'Access Token: ${next.accessToken}\nEmail: ${emailController.text.trim()}'),
-          ),
-        );
+        
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
               builder: (context) => Home(
@@ -155,6 +150,7 @@ class _LoginState extends ConsumerState<Log_in> {
                 ),
               ),
             ),
+            
           ],
         ),
       ),

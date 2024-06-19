@@ -1,7 +1,7 @@
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart' as http;
-import 'package:zemnanit/presentation/screens/models/auth_state.dart';
+import 'package:zemnanit/presentation/user_side/models/auth_state.dart';
 import 'dart:convert';
 
 class AuthService extends StateNotifier<AuthState> {
@@ -68,7 +68,7 @@ class AuthService extends StateNotifier<AuthState> {
         final responseBody = json.decode(response.body);
         final accessToken = responseBody['access_token']; // Ensure this key exists in response
         state = state.copyWith(
-          message: "Logged in successfully",
+          message: "Successful",
           email: email,
           accessToken: accessToken,
           loading: false,

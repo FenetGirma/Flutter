@@ -5,12 +5,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:mockito/annotations.dart';
-import 'package:zemnanit/presentation/screens/common_widgets/appbar.dart';
-import 'package:zemnanit/presentation/screens/common_widgets/bottomnav.dart';
-import 'package:zemnanit/presentation/screens/providers/auth_provider.dart';
-import 'package:zemnanit/presentation/screens/screens/appointments.dart';
-import 'package:zemnanit/presentation/screens/services/auth_service.dart';
-import 'package:zemnanit/presentation/screens/models/auth_state.dart';
+import 'package:zemnanit/presentation/user_side/common_widgets/appbar.dart';
+import 'package:zemnanit/presentation/user_side/common_widgets/bottomnav.dart';
+import 'package:zemnanit/presentation/user_side/providers/auth_provider.dart';
+import 'package:zemnanit/presentation/user_side/screens/appointments.dart';
+import 'package:zemnanit/presentation/user_side/services/auth_service.dart';
+import 'package:zemnanit/presentation/user_side/models/auth_state.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/testing.dart';
 

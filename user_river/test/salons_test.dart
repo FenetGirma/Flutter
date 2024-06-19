@@ -137,13 +137,13 @@ import 'package:mockito/mockito.dart';
 import 'package:mockito/annotations.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:zemnanit/presentation/screens/providers/auth_provider.dart';
-import 'package:zemnanit/presentation/screens/screens/salonss.dart';
+import 'package:zemnanit/presentation/user_side/providers/auth_provider.dart';
+import 'package:zemnanit/presentation/user_side/screens/salonss.dart';
 import 'dart:convert';
 
-import 'package:zemnanit/presentation/screens/services/auth_service.dart';
-import 'package:zemnanit/presentation/screens/common_widgets/appbar.dart';
-import 'package:zemnanit/presentation/screens/common_widgets/bottomnav.dart';
+import 'package:zemnanit/presentation/user_side/services/auth_service.dart';
+import 'package:zemnanit/presentation/user_side/common_widgets/appbar.dart';
+import 'package:zemnanit/presentation/user_side/common_widgets/bottomnav.dart';
 
 
 import 'salons_test.mocks.dart';

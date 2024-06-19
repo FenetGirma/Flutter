@@ -3,13 +3,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:mockito/annotations.dart';
-import 'package:zemnanit/presentation/screens/screens/appointments.dart';
-import 'package:zemnanit/presentation/screens/screens/booking.dart';
-import 'package:zemnanit/presentation/screens/screens/home.dart';
-import 'package:zemnanit/presentation/screens/screens/login_user.dart';
-import 'package:zemnanit/presentation/screens/screens/salonss.dart';
-import 'package:zemnanit/presentation/screens/services/auth_service.dart';
-import 'package:zemnanit/presentation/screens/providers/auth_provider.dart';
+import 'package:zemnanit/presentation/user_side/screens/appointments.dart';
+import 'package:zemnanit/presentation/user_side/screens/booking.dart';
+import 'package:zemnanit/presentation/user_side/screens/home.dart';
+import 'package:zemnanit/presentation/user_side/screens/login_user.dart';
+import 'package:zemnanit/presentation/user_side/screens/salonss.dart';
+import 'package:zemnanit/presentation/user_side/services/auth_service.dart';
+import 'package:zemnanit/presentation/user_side/providers/auth_provider.dart';
 
 import 'booking_test.mocks.dart';
 @GenerateMocks([AuthService])
