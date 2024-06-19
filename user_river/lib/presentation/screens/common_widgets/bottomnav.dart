@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:zemnanit/presentation/screens/providers/auth_provider.dart';
 import '../services/auth_service.dart';
 
 // Define a StateProvider for the selected index of the BottomNavigationBar

@@ -41,29 +41,29 @@ class SalonListScreen extends ConsumerStatefulWidget {
   const SalonListScreen({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<SalonListScreen> createState() => _SalonListScreenState();
+  ConsumerState<SalonListScreen> createState() => SalonListScreenState();
 }
 
-class _SalonListScreenState extends ConsumerState<SalonListScreen> {
+class SalonListScreenState extends ConsumerState<SalonListScreen> {
   bool _isLoading = false;
-  List _salons = [];
-  List _filteredSalons = [];
-  final TextEditingController _searchController = TextEditingController();
+  List salons = [];
+  List filteredSalons = [];
+  final TextEditingController searchController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
-    _fetchSalons();
-    _searchController.addListener(_filterSalons);
+    fetchSalons();
+    searchController.addListener(filterSalons);
   }
 
   @override
   void dispose() {
-    _searchController.dispose();
+    searchController.dispose();
     super.dispose();
   }
 
-  Future<void> _fetchSalons() async {
+  Future<void> fetchSalons() async {
     setState(() {
       _isLoading = true;
     });
@@ -74,8 +74,8 @@ class _SalonListScreenState extends ConsumerState<SalonListScreen> {
 
       if (response.statusCode == 200) {
         setState(() {
-          _salons = json.decode(response.body);
-          _filteredSalons = _salons;
+          salons = json.decode(response.body);
+          filteredSalons = salons;
         });
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
@@ -93,10 +93,10 @@ class _SalonListScreenState extends ConsumerState<SalonListScreen> {
     }
   }
 
-  void _filterSalons() {
-    final query = _searchController.text.toLowerCase();
+  void filterSalons() {
+    final query = searchController.text.toLowerCase();
     setState(() {
-      _filteredSalons = _salons.where((salon) {
+      filteredSalons = salons.where((salon) {
         final salonName = salon['name'].toLowerCase();
         final salonLocation = salon['location'].toLowerCase();
         return salonName.contains(query) || salonLocation.contains(query);
@@ -117,7 +117,7 @@ class _SalonListScreenState extends ConsumerState<SalonListScreen> {
                 Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: TextField(
-                    controller: _searchController,
+                    controller: searchController,
                     decoration: InputDecoration(
                       labelText: 'Search Salons',
                       border: OutlineInputBorder(
@@ -138,9 +138,9 @@ class _SalonListScreenState extends ConsumerState<SalonListScreen> {
                       mainAxisSpacing: 16.0,
                       crossAxisSpacing: 16.0,
                     ),
-                    itemCount: _filteredSalons.length,
+                    itemCount: filteredSalons.length,
                     itemBuilder: (context, index) {
-                      var salon = _filteredSalons[index];
+                      var salon = filteredSalons[index];
                       return Container(
                         decoration: BoxDecoration(
                           color: Colors.white,

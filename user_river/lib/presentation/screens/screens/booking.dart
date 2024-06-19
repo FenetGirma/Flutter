@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:zemnanit/presentation/screens/providers/auth_provider.dart';
 // import 'package:file_picker/file_picker.dart';
 import 'package:zemnanit/presentation/screens/screens/appointments.dart';
 import 'package:zemnanit/presentation/screens/common_widgets/bottomnav.dart';

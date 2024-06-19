@@ -1,6 +1,9 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:zemnanit/presentation/screens/common_widgets/appbar.dart';
+import 'package:zemnanit/presentation/screens/models/auth_state.dart';
+import 'package:zemnanit/presentation/screens/providers/auth_provider.dart';
 import 'package:zemnanit/presentation/screens/services/auth_service.dart';
 
 class CreateUser extends StatelessWidget {
@@ -30,6 +33,17 @@ class _UserState extends ConsumerState<User> {
   Widget build(BuildContext context) {
     final authService = ref.read(authServiceProvider.notifier);
     final authState = ref.watch(authServiceProvider);
+
+    ref.listen<AuthState>(authServiceProvider, (previous, next) {
+      print('State changed: ${next.message}, loading: ${next.loading}, error: ${next.error}');
+      if (!next.loading && next.message == "User created successfully") {
+        Navigator.of(context, rootNavigator: true).pushNamed("/login");
+      } else if (!next.loading && next.error != null) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Signup failed. Please try again.')),
+        );
+      }
+    });
 
     return Scaffold(
       backgroundColor: const Color(0xFFF1CFC3),
@@ -239,6 +253,7 @@ class _UserState extends ConsumerState<User> {
                           final String age = ageController.text;
                           final String password = passwordController.text;
 
+                          print('Button pressed: fullname: $fullname, email: $email, age: $age');
                           // Call the create user function from the auth service
                           await authService.signup(
                             email,
@@ -246,21 +261,6 @@ class _UserState extends ConsumerState<User> {
                             fullname,
                             age,
                           );
-
-                          // Navigate to login page if signup was successful
-                          if (authState.message ==
-                              "User created successfully") {
-                            Navigator.of(context, rootNavigator: true)
-                                .pushNamed("/login");
-                          } else {
-                            // Handle the case where signup fails (e.g., show an error message)
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                content:
-                                    Text('Signup failed. Please try again.'),
-                              ),
-                            );
-                          }
                         },
                       ),
               ),

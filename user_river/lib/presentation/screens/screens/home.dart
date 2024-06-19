@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:zemnanit/presentation/screens/providers/auth_provider.dart';
 import 'package:zemnanit/presentation/screens/screens/booking.dart';
 import 'package:zemnanit/presentation/screens/common_widgets/appbar.dart';
 import 'package:zemnanit/presentation/screens/common_widgets/bottomnav.dart'; // Import the bottom navigation bar

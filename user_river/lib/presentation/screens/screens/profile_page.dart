@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:zemnanit/presentation/screens/providers/auth_provider.dart';
 import 'package:zemnanit/presentation/screens/services/auth_service.dart';
 
 class ProfilePage extends ConsumerWidget {

@@ -231,6 +231,7 @@ import 'package:zemnanit/presentation/screens/screens/booking.dart';
 import 'package:zemnanit/presentation/screens/screens/home.dart';
 import 'package:zemnanit/presentation/screens/screens/login_user.dart';
 import 'package:zemnanit/presentation/screens/screens/salonss.dart';
+import 'package:zemnanit/presentation/screens/services/auth_service.dart';
 
 
 class MyAppointments extends StatelessWidget {
