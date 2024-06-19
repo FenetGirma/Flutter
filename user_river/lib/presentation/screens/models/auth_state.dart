@@ -6,6 +6,7 @@ class AuthState {
   final String? email;
   final String? fullname;
   final String? accessToken;
+  
   final List<dynamic>? salons;
   final bool loading;
 

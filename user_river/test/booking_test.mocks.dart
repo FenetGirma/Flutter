@@ -241,15 +241,15 @@ class MockAuthService extends _i1.Mock implements _i4.AuthService {
 
   @override
   _i7.Future<void> updatePassword(
-    String? email,
-    String? password,
+    String? newPassword,
+    dynamic oldPassword,
   ) =>
       (super.noSuchMethod(
         Invocation.method(
           #updatePassword,
           [
-            email,
-            password,
+            newPassword,
+            oldPassword,
           ],
         ),
         returnValue: _i7.Future<void>.value(),
@@ -257,10 +257,10 @@ class MockAuthService extends _i1.Mock implements _i4.AuthService {
       ) as _i7.Future<void>);
 
   @override
-  _i7.Future<void> deleteUser(String? email) => (super.noSuchMethod(
+  _i7.Future<void> deleteUser() => (super.noSuchMethod(
         Invocation.method(
           #deleteUser,
-          [email],
+          [],
         ),
         returnValue: _i7.Future<void>.value(),
         returnValueForMissingStub: _i7.Future<void>.value(),

@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:zemnanit/presentation/screens/providers/auth_provider.dart';
@@ -14,6 +15,7 @@ class ProfilePage extends ConsumerWidget {
     final authState = ref.watch(authServiceProvider);
 
     final TextEditingController passwordController = TextEditingController();
+    final TextEditingController oldpasswordController = TextEditingController();
 
     return Scaffold(
       appBar: AppBar(
@@ -26,6 +28,11 @@ class ProfilePage extends ConsumerWidget {
           children: [
             Text('Email: $email'),
             SizedBox(height: 16),
+             TextField(
+              controller: oldpasswordController,
+              decoration: InputDecoration(labelText: 'Old Password'),
+              obscureText: true,
+            ),
             TextField(
               controller: passwordController,
               decoration: InputDecoration(labelText: 'New Password'),
@@ -34,15 +41,11 @@ class ProfilePage extends ConsumerWidget {
             SizedBox(height: 16),
             ElevatedButton(
               onPressed: () async {
-                await authService.updatePassword(
-                    email, passwordController.text);
-                if (authState.message != null) {
+                await authService.updatePassword(passwordController.text, oldpasswordController.text);
+                final snackBarContent = authState.message ?? authState.error;
+                if (snackBarContent != null) {
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: Text(authState.message!),
-                  ));
-                } else if (authState.error != null) {
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: Text(authState.error!),
+                    content: Text(snackBarContent),
                   ));
                 }
               },
@@ -51,21 +54,22 @@ class ProfilePage extends ConsumerWidget {
             SizedBox(height: 16),
             ElevatedButton(
               onPressed: () async {
-                await authService.deleteUser(email);
-                if (authState.message != null) {
+                await authService.deleteUser();
+                final snackBarContent = authState.message ?? authState.error;
+                if (snackBarContent != null) {
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: Text(authState.message!),
+                    content: Text(snackBarContent),
                   ));
-                  Navigator.of(context).pop(); // Go back to the previous screen
-                } else if (authState.error != null) {
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: Text(authState.error!),
-                  ));
+                  if (authState.message != null) {
+                    Navigator.of(context).pop(); // Go back to the previous screen
+                  }
                 }
               },
               child: Text('Delete Account'),
               style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
             ),
+            SizedBox(height: 16),
+            
           ],
         ),
       ),
