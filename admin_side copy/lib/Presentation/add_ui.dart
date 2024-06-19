@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:admin_side/Application/add_page/add_bloc.dart';
+import 'package:provider/provider.dart';
 
 class AddSalonScreen extends StatefulWidget {
   final String accessToken;
@@ -11,7 +12,13 @@ class AddSalonScreen extends StatefulWidget {
 }
 
 class _AddSalonScreenState extends State<AddSalonScreen> {
-  final AddSalonBloc _bloc = AddSalonBloc(); // Instantiate the bloc
+  late AddSalonBloc _bloc;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _bloc = Provider.of<AddSalonBloc>(context);
+  }
 
   @override
   Widget build(BuildContext context) {

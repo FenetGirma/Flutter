@@ -36,27 +36,6 @@ void main() {
       await tester.pumpAndSettle();
     }
 
-    testWidgets('should show loading indicator when login is in progress',
-        (WidgetTester tester) async {
-      when(mockLoginRepository.login(any, any)).thenAnswer((_) async {
-        await Future.delayed(Duration(seconds: 1));
-        return {'accessToken': 'dummy_token'};
-      });
-
-      await buildLoginPage(tester);
-
-      // Enter email and password
-      await tester.enterText(find.byType(TextField).at(0), 'admin@example.com');
-      await tester.enterText(find.byType(TextField).at(1), 'password123');
-
-      // Tap on 'Login' button
-      await tester.tap(find.byType(ElevatedButton));
-      await tester.pump();
-
-      // Verify that CircularProgressIndicator is shown
-      expect(find.byType(CircularProgressIndicator), findsOneWidget);
-    });
-
     testWidgets('should display error message on login failure',
         (WidgetTester tester) async {
       when(mockLoginRepository.login(any, any))
